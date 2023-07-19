@@ -1,2 +1,3 @@
 #Virtual setup
 ENV
+*.pyc

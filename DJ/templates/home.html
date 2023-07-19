@@ -17,27 +17,21 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Designation</th>
+          <th>Phone Number</th>
         </tr>
       </thead>
       <tbody>
+        {%for emp in employees%}
         <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
+          <td>{{forloop.counter}}</td>
+          <td><a href="{% url 'employee_details' emp.id %}">{{emp.first_name}} {{emp.last_name}}</a> </td>
+          <td>{{emp.designation}}</td>
+          <td>{{emp.phone_number}}</td>
         </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
